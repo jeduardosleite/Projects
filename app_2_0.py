@@ -48,7 +48,7 @@ def to_excel(df):
 def main():
     # Configuração inicial da página de aplicação
     st.set_page_config(page_title = 'Telemarketing analisys', \
-        page_icon = ('/Users/Meu Computador/anaconda3/EBAC/M 19 - Streamlit 2/img/telmarketing_icon.png'),
+        page_icon = Image.open('img/telmarketing_icon.png'),
         initial_sidebar_state='expanded'
     )
 
@@ -57,7 +57,7 @@ def main():
     st.markdown("---")
     
     # Apresenta a imagem na barra lateral da aplicação
-    image = Image.open("/Users/Meu Computador/anaconda3/EBAC/M 19 - Streamlit 2/img/Bank-Branding.jpg")
+    image = Image.open("img/Bank-Branding.jpg")
     st.sidebar.image(image)
 
     # Botão para carregar arquivo na aplicação
