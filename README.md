@@ -1,4 +1,6 @@
-# Streamlit 2
+# **Streamlit 2**
+
+### [Link to app, click here!](https://project-ebac-jeduardo.streamlit.app/)
 
 ## Bank analisys
 
