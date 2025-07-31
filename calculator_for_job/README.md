@@ -1,5 +1,7 @@
 # Cost M²
 
+[Web link](https://calculadoralinea.streamlit.app/)
+
 I developed a web calculator using Python and Streamlit to automate the calculation of sales per square meter, optimizing the company's internal processes. 
 
 Throughout the project, I used pandas for data manipulation, NumPy for calculations and Git/GitHub for versioning and collaboration. This experience strengthened my skills in problem solving, programming logic and structuring clean and functional code. 
