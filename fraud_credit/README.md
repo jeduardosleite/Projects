@@ -17,7 +17,7 @@
 - [7. Dificuldades](#7-dificuldades)
 - [8. Estimativa de ganho financeiro](#8-estimativa-de-ganho-financeiro)
 - [9. Fluxograma e Ações Corretivas](#9-fluxograma-e-ações-corretivas)
-
+- [10. Baixando o Arquivo](#10-baixando-o-arquivo)
 
 #### Contate-me: https://www.linkedin.com/in/jos%C3%A9-eduardo-souza-leite/
 
@@ -224,6 +224,37 @@ Cálculos (com TP = 17.477 e FN = 4):
 
 [🔝 Voltar ao topo](#-sumário)
 
+---
+
+## 10. Baixando o arquivo
+O arquivo `fraud_dataset.csv` é grande (~80 MB) e está armazenado via **Git LFS**.  
+Para garantir que o arquivo seja baixado corretamente, siga estas instruções:
+
+#### 1️⃣ Instale o Git LFS
+- **Windows**: [https://git-lfs.github.com/](https://git-lfs.github.com/)  
+- **macOS**: `brew install git-lfs`  
+- **Linux**: `sudo apt install git-lfs`
+
+#### 2️⃣ Inicialize o Git LFS (uma vez)
+git lfs install
+
+#### 3️⃣ Clone o repositório
+git clone https://github.com/jeduardosleite/Projects.git
+
+cd Projects/fraud_credit
+
+#### 4️⃣ Baixe os arquivos grandes via LFS
+git lfs pull
+
+Agora o arquivo fraud_dataset.csv estará disponível para uso no projeto.
+
+⚠️ Lembre-se: é necessário ter o Git LFS instalado para baixar corretamente o CSV.
+Caso não tenha o LFS, o arquivo aparecerá apenas como um ponteiro de texto.
+
+### Opção alternativa
+Acesse o link do arquivo bruto, cole numa planilha excel e salve como CSV.
+https://raw.githubusercontent.com/alura-cursos/youtube-alura/refs/heads/main/fraud_dataset.csv
 
 
+[🔝 Voltar ao topo](#-sumário)
 
