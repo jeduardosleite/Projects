@@ -7,16 +7,16 @@
 - [3. Objetivo](#3-objetivo)
 - [4. Ferramentas e tecnologias](#4-ferramentas-e-tecnologias)
 - [5. CRISP-DM](#5-crisp-dm)
-- [5. Análise Exploratória de Dados (EDA)](#5-análise-exploratória-de-dados-eda)
+- [6. Análise Exploratória de Dados (EDA)](#6-análise-exploratória-de-dados-eda)
   - [Visão Geral do Conjunto de Dados](#i-visão-geral-do-conjunto-de-dados)
   - [Verificação da Qualidade dos Dados](#ii-verificação-da-qualidade-dos-dados)
   - [Distribuição das Variáveis Numéricas](#iii-distribuição-das-variáveis-numéricas)
   - [Distribuição das Variáveis Binárias](#iv-distribuição-das-variáveis-binárias)
   - [Fraudes vs. Transações Legítimas](#v-fraudes-vs-transações-legítimas)
   - [Principais Insights para Modelagem](#vi-principais-insights-para-modelagem)
-- [6. Dificuldades](#6-dificuldades)
-- [7. Estimativa de ganho financeiro](#7-estimativa-de-ganho-financeiro)
-- [8. Fluxograma e Ações Corretivas](#8-fluxograma-e-ações-corretivas)
+- [7. Dificuldades](#7-dificuldades)
+- [8. Estimativa de ganho financeiro](#8-estimativa-de-ganho-financeiro)
+- [9. Fluxograma e Ações Corretivas](#9-fluxograma-e-ações-corretivas)
 
 
 #### Contate-me: https://www.linkedin.com/in/jos%C3%A9-eduardo-souza-leite/
@@ -29,6 +29,7 @@
 
 A empresa está enfrentando um aumento significativo de transações fraudulentas com cartões de crédito, o que prejudica a confiança dos clientes e causa perdas financeiras. Sua tarefa é desenvolver um modelo preditivo que possa identificar transações fraudulentas com alta precisão, minimizando assim o impacto financeiro e protegendo a reputação da instituição.
 
+[🔝 Voltar ao topo](#-sumário)
 ---
 
 ## 2. Conjunto de dados:
@@ -50,6 +51,7 @@ Descrição das colunas do conjunto de dados utilizadas para detecção de fraud
 | **online_order**               | float (0 ou 1) | Indica se a transação foi realizada online (1) ou presencialmente (0). |
 | **fraud**                      | float (0 ou 1) | Variável alvo: identifica se a transação foi fraudulenta (1) ou legítima (0). |
 
+[🔝 Voltar ao topo](#-sumário)
 ---
 
 ## 3. Objetivo
@@ -63,6 +65,7 @@ O trabalho envolve:
 
 O objetivo final é criar uma solução **robusta e escalável**, aplicável em sistemas financeiros reais, reduzindo perdas econômicas e aumentando a confiança dos clientes.
 
+[🔝 Voltar ao topo](#-sumário)
 ---
 
 ## 4. Ferramentas e tecnologias
@@ -74,6 +77,7 @@ As ferramentas e tecnologias que usei foram:
   - Machine Learning;
   - Conceitos de estatística.
 
+[🔝 Voltar ao topo](#-sumário)
 ---
 
 ## 5. CRISP-DM
@@ -90,9 +94,10 @@ Pipeline baseada no framework **CRISP-DM**:
 8. **Conclusão e interpretação dos resultados.**  
 9. **Implantação (deploy).**
 
+[🔝 Voltar ao topo](#-sumário)
 ---
 
-## 5. Análise Exploratória de Dados (EDA)
+## 6. Análise Exploratória de Dados (EDA)
 
 ### I) Visão Geral do Conjunto de Dados
 - Total de registros: **1.000.000 transações**  
@@ -143,9 +148,10 @@ Pipeline baseada no framework **CRISP-DM**:
 - **Variáveis binárias (used_pin_number, online_order):** bons separadores entre fraude e legítimo.
 - **Necessário tratamento do desbalanceamento (ex.: SMOTE).**  
 
+[🔝 Voltar ao topo](#-sumário)
 ---
 
-## 6. Dificuldades
+## 7. Dificuldades
 Durante a fase de Análise Exploratória de Dados (EDA), foram identificados desafios críticos relacionados a outliers, desbalancemento de classes e data leakage. O comportamento atípico dos dados, bem como a suspeita de um vazamento que inflava as métricas de desempenho do modelo, exigiu uma investigação aprofundada.
 
 <img width="330" height="301" alt="image" src="https://github.com/user-attachments/assets/90198d18-4a7e-48c2-ba0d-c96c8c4ae88f" />
@@ -155,8 +161,10 @@ Durante a fase de Análise Exploratória de Dados (EDA), foram identificados des
 
 A solução não se limitou a um simples ajuste; foi necessário um aprofundamento nos conceitos de pré-processamento e validação de modelo. A pesquisa em diversas fontes — como documentações de bibliotecas, comunidades online e tutoriais — foi essencial para compreender a raiz dos problemas e implementar correções. Este processo de depuração não apenas resolveu a questão da métrica inflada, mas também solidificou a integridade metodológica do projeto, garantindo que os resultados finais são uma representação fiel do desempenho do modelo.
 
+[🔝 Voltar ao topo](#-sumário)
 ---
-## 7. Estimativa de ganho financeiro
+
+## 8. Estimativa de ganho financeiro
 
 ### Cenário estimado com ticket médio real (com base em dados da Serasa Experian)
 
@@ -171,9 +179,10 @@ Cálculos (com TP = 17.477 e FN = 4):
 
  Esses valores são estimativas baseadas em ticket médio real e úteis para contextualizar o impacto financeiro do modelo mesmo sem dados individuais de valor de transação no dataset.
 
+[🔝 Voltar ao topo](#-sumário)
  ---
 
- ## 8. Fluxograma e Ações Corretivas
+ ## 9. Fluxograma e Ações Corretivas
 
 <img width="442" height="663" alt="image" src="https://github.com/user-attachments/assets/e9dbe346-7e2d-44c7-9fd9-bb05aa7c5834" />
 
@@ -213,7 +222,7 @@ Cálculos (com TP = 17.477 e FN = 4):
 - **Ação recomendada:**  
   - Nenhuma ação específica necessária; foco em outros fatores mais críticos.
 
-
+[🔝 Voltar ao topo](#-sumário)
 
 
 
