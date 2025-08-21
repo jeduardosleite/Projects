@@ -227,33 +227,18 @@ Cálculos (com TP = 17.477 e FN = 4):
 ---
 
 ## 10. Baixando o arquivo
-O arquivo `fraud_dataset.csv` é grande (~80 MB) e está armazenado via **Git LFS**.  
-Para garantir que o arquivo seja baixado corretamente, siga estas instruções:
+Para utilizar o dataset `fraud_dataset.csv` em sua máquina, faça o download direto pelo link abaixo:
 
-#### 1️⃣ Instale o Git LFS
-- **Windows**: [https://git-lfs.github.com/](https://git-lfs.github.com/)  
-- **macOS**: `brew install git-lfs`  
-- **Linux**: `sudo apt install git-lfs`
+👉 [Clique aqui para baixar o fraud_dataset.csv](https://raw.githubusercontent.com/jeduardosleite/Projects/main/fraud_credit/fraud_dataset.csv)
 
-#### 2️⃣ Inicialize o Git LFS (uma vez)
-git lfs install
+Ou, se preferir pelo terminal:
+- Usando wget
+ 
+wget https://raw.githubusercontent.com/jeduardosleite/Projects/main/fraud_credit/fraud_dataset.csv
 
-#### 3️⃣ Clone o repositório
-git clone https://github.com/jeduardosleite/Projects.git
-
-cd Projects/fraud_credit
-
-#### 4️⃣ Baixe os arquivos grandes via LFS
-git lfs pull
-
-Agora o arquivo fraud_dataset.csv estará disponível para uso no projeto.
-
-⚠️ Lembre-se: é necessário ter o Git LFS instalado para baixar corretamente o CSV.
-Caso não tenha o LFS, o arquivo aparecerá apenas como um ponteiro de texto.
-
-### Opção alternativa
-Acesse o link do arquivo bruto, cole numa planilha excel e salve como CSV.
-https://raw.githubusercontent.com/alura-cursos/youtube-alura/refs/heads/main/fraud_dataset.csv
+- Usando curl
+  
+curl -L -o fraud_dataset.csv https://raw.githubusercontent.com/jeduardosleite/Projects/main/fraud_credit/fraud_dataset.csv
 
 
 [🔝 Voltar ao topo](#-sumário)
