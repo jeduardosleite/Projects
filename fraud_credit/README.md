@@ -17,7 +17,7 @@
 - [7. Dificuldades](#7-dificuldades)
 - [8. Estimativa de ganho financeiro](#8-estimativa-de-ganho-financeiro)
 - [9. Fluxograma e Ações Corretivas](#9-fluxograma-e-ações-corretivas)
-- [10. Baixando o Arquivo](#10-baixando-o-arquivo)
+- [10. Usando o dataset](#10-usando-o-dataset)
 
 #### Contate-me: https://www.linkedin.com/in/jos%C3%A9-eduardo-souza-leite/
 
@@ -226,19 +226,22 @@ Cálculos (com TP = 17.477 e FN = 4):
 
 ---
 
-## 10. Baixando o arquivo
-Para utilizar o dataset `fraud_dataset.csv` em sua máquina, faça o download direto pelo link abaixo:
+## 10.  Usando o dataset
 
-👉 [Clique aqui para baixar o fraud_dataset.csv](https://raw.githubusercontent.com/jeduardosleite/Projects/main/fraud_credit/fraud_dataset.csv)
+Você pode carregar o dataset `fraud_dataset.csv` diretamente do repositório GitHub, sem precisar baixar manualmente:
 
-Ou, se preferir pelo terminal:
-- Usando wget
- 
-wget https://raw.githubusercontent.com/jeduardosleite/Projects/main/fraud_credit/fraud_dataset.csv
+```python
+import pandas as pd
 
-- Usando curl
-  
-curl -L -o fraud_dataset.csv https://raw.githubusercontent.com/jeduardosleite/Projects/main/fraud_credit/fraud_dataset.csv
+# URL do CSV no GitHub
+url = "https://media.githubusercontent.com/media/jeduardosleite/Projects/refs/heads/main/fraud_credit/fraud_dataset.csv"
+
+# Carregar o CSV diretamente do link
+df = pd.read_csv(url)
+
+# Conferir as primeiras linhas
+df.head()
+```
 
 
 [🔝 Voltar ao topo](#-sumário)
