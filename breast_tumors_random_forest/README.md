@@ -2,6 +2,8 @@
 
 <img width="1019" height="526" alt="image" src="https://github.com/user-attachments/assets/7f69f940-bf5d-4e35-bc89-9b9c0b61c985" />
 
+# Index
+
 - [1. Objective](#1-objective)
 - [2. Context](#2-context)
 - [3. Project stages](#3-project-stages)
@@ -19,8 +21,14 @@
 Develop a machine learning model capable of classifying breast tumors as malignant or benign with high accuracy, using the Random Forest algorithm.
 The idea is to show how an ensemble model can be applied to health problems, helping to detect breast cancer early.
 
+[🔝 Return to index](#-index)
+---
+
 ### 2. Context
 Breast cancer is one of the leading causes of death among women worldwide. Early detection is essential to increase the chances of effective treatment. This project uses the Breast Cancer Wisconsin dataset, which is widely used in the scientific community to test classification models.
+
+[🔝 Return to index](#-index)
+---
 
 ### 3. Project stages
 - Data collection and loading — use of scikit-learn's load_breast_cancer dataset.
@@ -30,7 +38,10 @@ Breast cancer is one of the leading causes of death among women worldwide. Early
 - Model evaluation — calculation of accuracy, precision, recall and F1-score.
 - Interpretation of results — identification of the most important variables.
 - Conclusions — analysis of the impact of variables and applicability of the model.
+
+[🔝 Return to index](#-index)
 ---
+
 ### 4. Results
 Accuracy: 97.07% on the test set. The model showed high recall for malignant tumors, reducing the risk of false negatives.
 
@@ -47,31 +58,26 @@ The measurements were calculated in three ways:
 
 #### Main columns:
 
-1. radius — average distance from the center to the perimeter of the tumor.
+| Feature              | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| **radius**           | Average distance from the center to the perimeter of the tumor              |
+| **texture**          | Variation in the gray intensity of the image                                |
+| **perimeter**        | Length of the tumor contour                                                 |
+| **area**             | Area occupied by the tumor                                                  |
+| **smoothness**       | Variation in the length of the radii, indicating surface irregularity        |
+| **compactness**      | Relationship between the perimeter and the area, measuring compactness      |
+| **concavity**        | Degree of concavity in parts of the contour                                 |
+| **concave points**   | Number of concave points in the contour                                     |
+| **symmetry**         | Symmetry of form                                                            |
+| **fractal dimension**| Contour complexity                                                          |
 
-2. texture — variation in the gray intensity of the image.
+#### Target Variable
+- **0 → Malignant**  
+- **1 → Benign**
 
-3. perimeter — length of the tumor contour.
 
-4. area — area occupied by the tumor.
-
-5. smoothness — variation in the length of the rays, indicating surface irregularity.
-
-6. compactness — relationship between the perimeter and the area, measuring compactness.
-
-7. concavity — degree of concavity in parts of the contour.
-
-8. concave points — number of concave points in the contour.
-
-9. symmetry — symmetry of form.
-
-10. fractal dimension — contour complexity.
-
-The set also includes the target variable:
-
-- 0 → Malignant
-
-- 1 → Benign
+[🔝 Return to index](#-index)
+---
 
 ### 5. Insights from the Model
 
@@ -93,6 +99,7 @@ The set also includes the target variable:
    - Larger and more aggressive tumors typically show higher values in **area** and **radius**.  
    - Therefore, the model reinforces known findings in medical literature, which increases its credibility.  
 
+[🔝 Return to index](#-index)
 ---
 
 ### 6. Applicability Insights
@@ -106,6 +113,7 @@ The set also includes the target variable:
 3. **Integration Potential**  
    - The model could be integrated into **hospital systems** for automatic analysis of exam data, helping reduce diagnosis time and increasing early detection rates.  
 
+[🔝 Return to index](#-index)
 ---
 
 ### 7. Summary
