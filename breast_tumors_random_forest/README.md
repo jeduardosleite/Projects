@@ -1,121 +1,171 @@
-<h1 style="color:blue;">Project: Classification of Breast Tumors with Random Forest</h1>
+<h1 style="color:blue;">Classificação de tumores de mama com XGBoost</h1>
 
 <img width="1019" height="526" alt="image" src="https://github.com/user-attachments/assets/7f69f940-bf5d-4e35-bc89-9b9c0b61c985" />
 
-# Index
+# Índice
+Justificativa para não aplicar transformação logarítmica nos outlie
+- [1. Objetivo](#1-objetivo)
+- [2. Contexto](#2-contexto)
+- [3. Etapas do Projeto](#3-etapas-do-projeto)
+- [4. Tratamento dos outliers](#4-justificativa-para-nao-aplicar-transformacao-logaritmica-nos-outliers)
+- [5. Resultados](#5-resultados)
+  - [Principais variáveis para previsão](#principais-variáveis-para-previsão)
+  - [Significado das colunas](#significado-das-colunas)
+  - [Principais colunas](#principais-colunas)
+- [6. Insights do Modelo](#6-insights-do-modelo)
+- [7. Insights de Aplicabilidade](#7-insights-de-aplicabilidade)
 
-- [1. Objective](#1-objective)
-- [2. Context](#2-context)
-- [3. Project stages](#3-project-stages)
-- [4. Results](#4-results)
-  - [Main variables for forecasting](#main-variables-for-forecasting)
-  - [Meaning of columns](#meaning-of-columns)
-  - [Main columns](#main-columns)
-- [5. Insights from the Model](#5-insights-from-the-model)
-- [6. Applicability Insights](#6-applicability-insights)
-- [Summary](#7-summary)
 
+### 1. Objetivo
 
-### 1. Objective
+Desenvolver um modelo de *machine learning* capaz de classificar tumores de mama como malignos ou benignos com alta acurácia, utilizando o algoritmo **XGBoost**.  
+A ideia é mostrar como um modelo de *ensemble* pode ser aplicado a problemas de saúde, auxiliando na detecção precoce do câncer de mama.
 
-Develop a machine learning model capable of classifying breast tumors as malignant or benign with high accuracy, using the Random Forest algorithm.
-The idea is to show how an ensemble model can be applied to health problems, helping to detect breast cancer early.
-
-[🔝 Return to index](#-index)
+#### [🔝 Voltar ao índice](#-índice)
 ---
 
-### 2. Context
-Breast cancer is one of the leading causes of death among women worldwide. Early detection is essential to increase the chances of effective treatment. This project uses the Breast Cancer Wisconsin dataset, which is widely used in the scientific community to test classification models.
+### 2. Contexto
+O câncer de mama é uma das principais causas de morte entre mulheres em todo o mundo. A detecção precoce é essencial para aumentar as chances de tratamento eficaz. Este projeto utiliza o **Breast Cancer Wisconsin Dataset**, amplamente usado na comunidade científica para testar modelos de classificação.
 
-[🔝 Return to index](#-index)
+#### [🔝 Voltar ao índice](#-índice)
 ---
 
-### 3. Project stages
-- Data collection and loading — use of scikit-learn's load_breast_cancer dataset.
-- Exploratory analysis — visualization of distributions and correlations between variables.
-- Training/testing split — 70% of data for training, 30% for testing.
-- Model training — application of Random Forest with 100 trees.
-- Model evaluation — calculation of accuracy, precision, recall and F1-score.
-- Interpretation of results — identification of the most important variables.
-- Conclusions — analysis of the impact of variables and applicability of the model.
+### 3. Etapas do Projeto
+- Coleta e carregamento dos dados — uso do dataset `load_breast_cancer` do scikit-learn.  
+- Análise exploratória — visualização das distribuições e correlações entre variáveis.  
+- Divisão treino/teste — 80% dos dados para treino, 20% para teste.  
+- Treinamento do modelo — aplicação do XGBoost.  
+- Avaliação do modelo — cálculo de *accuracy*, *precision*, *recall* e *F1-score*.  
+- Interpretação dos resultados — identificação das variáveis mais importantes.  
+- Conclusões — análise do impacto das variáveis e aplicabilidade do modelo.  
 
-[🔝 Return to index](#-index)
+#### [🔝 Voltar ao índice](#-índice)
 ---
 
-### 4. Results
-Accuracy: 97.07% on the test set. The model showed high recall for malignant tumors, reducing the risk of false negatives.
+### 4. Justificativa para não aplicar transformação logarítmica nos outliers
 
-#### Main variables for forecasting
-Characteristics related to the shape and size of the tumor, such as **mean concave points**, **worst concave points** and **worst area**.
+Neste projeto, a análise exploratória mostrou que variáveis como **`area_error`** e **`radius_error`** apresentam valores considerados outliers.  
+Em muitos cenários de *machine learning*, uma prática comum seria aplicar transformações como o logaritmo natural (`np.log1p`) para reduzir a assimetria e suavizar o impacto desses valores extremos.
 
-#### Meaning of columns
-The dataset has 30 numerical variables derived from the digital analysis of images of breast masses obtained by biopsy. Each variable represents a geometric or textural characteristic of the tumor cell.
-The measurements were calculated in three ways:
+No entanto, optou-se por **não realizar essa transformação** neste caso, pelos seguintes motivos:
 
-- mean
-- if (standard error)
-- worst (highest observed value)
+#### 1. Significado clínico dos outliers
+- Os valores extremos podem representar **pacientes com tumores maiores ou mais irregulares**, ou seja, casos clinicamente relevantes.  
+- Aplicar log reduziria a magnitude desses valores, podendo **atenuar sinais importantes para o diagnóstico**.  
 
-#### Main columns:
+---
 
-| Feature              | Description                                                                 |
+#### 2. Capacidade do XGBoost em lidar com outliers
+- O **XGBoost** é um algoritmo baseado em **árvores de decisão**, que cria divisões por meio de **limiares (thresholds)**.  
+- Isso torna o modelo **menos sensível a escala e assimetria**, dispensando a necessidade de normalizações ou transformações logarítmicas.  
+
+---
+
+#### 3. Resultados experimentais
+O modelo treinado **sem a transformação logarítmica** apresentou métricas muito altas:  
+
+- **Recall = 0.96** para a classe positiva (câncer), garantindo que a maioria dos casos de câncer sejam identificados.  
+- **ROC AUC = 0.994**, indicando separação quase perfeita entre as classes.  
+
+Esses resultados demonstram que os outliers não prejudicaram o desempenho; pelo contrário, foram **bem absorvidos pelo modelo**.  
+
+---
+
+#### 4. Priorização do Recall
+- Em diagnósticos médicos, o **recall é crítico**: um falso negativo pode ter consequências graves.  
+- A suavização dos outliers poderia **reduzir a sensibilidade do modelo** em relação a casos extremos de câncer, diminuindo sua capacidade de detecção.  
+
+#### [🔝 Voltar ao índice](#-índice)
+---
+
+### 5. Resultados
+
+<img width="373" height="305" alt="image" src="https://github.com/user-attachments/assets/ad202644-8c74-4b19-a9c0-f8ba130c76a2" />
+
+#### Classe 0 (Sem câncer)
+- **Precision = 0.93** → 93% dos pacientes classificados como “sem câncer” realmente não têm.  
+- **Recall = 0.95** → o modelo consegue identificar 95% dos casos benignos corretamente.  
+
+#### Classe 1 (Com câncer)
+- **Precision = 0.97** → quase nenhum falso positivo (ótimo do ponto de vista clínico).  
+- **Recall = 0.96** → o mais importante: o modelo detecta **96% dos casos de câncer**.  
+
+#### Métricas gerais
+- **Acurácia = 0.96** → desempenho geral altíssimo.  
+- **ROC AUC = 0.994** → separação quase perfeita entre classes.  
+
+#### Principais variáveis para previsão
+Características relacionadas ao formato e tamanho do tumor, como:  
+- **mean concave points**  
+- **worst concave points**  
+- **worst area**  
+
+#### Significado das colunas
+O dataset possui 30 variáveis numéricas derivadas da análise digital de imagens de massas mamárias obtidas por biópsia.  
+Cada variável representa uma característica geométrica ou textural da célula tumoral.  
+As medidas foram calculadas de três formas:  
+
+- **mean** (média)  
+- **se** (erro padrão)  
+- **worst** (maior valor observado)  
+
+#### Principais colunas:
+
+| Feature              | Descrição                                                                   |
 |-----------------------|-----------------------------------------------------------------------------|
-| **radius**           | Average distance from the center to the perimeter of the tumor              |
-| **texture**          | Variation in the gray intensity of the image                                |
-| **perimeter**        | Length of the tumor contour                                                 |
-| **area**             | Area occupied by the tumor                                                  |
-| **smoothness**       | Variation in the length of the radii, indicating surface irregularity        |
-| **compactness**      | Relationship between the perimeter and the area, measuring compactness      |
-| **concavity**        | Degree of concavity in parts of the contour                                 |
-| **concave points**   | Number of concave points in the contour                                     |
-| **symmetry**         | Symmetry of form                                                            |
-| **fractal dimension**| Contour complexity                                                          |
+| **radius**           | Distância média do centro até o perímetro do tumor                          |
+| **texture**          | Variação da intensidade de cinza da imagem                                  |
+| **perimeter**        | Comprimento do contorno do tumor                                            |
+| **area**             | Área ocupada pelo tumor                                                     |
+| **smoothness**       | Variação no comprimento dos raios, indicando irregularidade da superfície   |
+| **compactness**      | Relação entre perímetro e área, medindo a compacidade                       |
+| **concavity**        | Grau de concavidade em partes do contorno                                   |
+| **concave points**   | Número de pontos côncavos no contorno                                       |
+| **symmetry**         | Simetria da forma                                                           |
+| **fractal dimension**| Complexidade do contorno                                                    |
 
-#### Target Variable
-- **0 → Malignant**  
-- **1 → Benign**
+#### Variável alvo
+- **0 → Maligno**  
+- **1 → Benigno**  
 
-
-[🔝 Return to index](#-index)
+#### [🔝 Voltar ao índice](#-índice)
 ---
 
-### 5. Insights from the Model
+### 6. Insights do Modelo
 
-1. **High Predictive Performance**  
-   - The model achieved **97.07% accuracy** and a high **recall for malignant tumors**, meaning it is very effective at identifying cancer cases while reducing **false negatives** (the most critical risk in medical diagnostics).  
-   - This suggests that Random Forest is a strong choice for healthcare problems where **patient safety** is the top priority.  
+1. **Alto Desempenho Preditivo**  
+   - O modelo atingiu **96% de acurácia** e alto **recall para tumores malignos**, mostrando-se muito eficaz em identificar casos de câncer e reduzindo os **falsos negativos** (o risco mais crítico em diagnósticos médicos).  
+   - Isso sugere que o XGBoost é uma ótima escolha para problemas de saúde em que a **segurança do paciente** é prioridade.
 
-2. **Most Important Variables**  
-   - The main predictive features are related to **tumor shape and size**:  
+<img width="382" height="300" alt="image" src="https://github.com/user-attachments/assets/007a6e5a-11bb-4f9e-8731-5561bd92721b" />
+
+2. **Variáveis Mais Importantes**  
+   - As principais variáveis preditivas estão relacionadas a **formato e tamanho do tumor**:  
      - **Mean concave points**  
      - **Worst concave points**  
      - **Worst area**  
      - **Mean concavity**  
      - **Worst radius**  
-   - This indicates that **irregularities in tumor contours** and **tumor dimensions** are critical factors in detecting malignancy.  
+   - Isso indica que **irregularidades no contorno do tumor** e **dimensões do tumor** são fatores críticos na detecção de malignidade.  
 
-3. **Clinical Interpretation**  
-   - Malignant tumors tend to have **more irregular borders and less uniform shapes**, reflected in the concave points.  
-   - Larger and more aggressive tumors typically show higher values in **area** and **radius**.  
-   - Therefore, the model reinforces known findings in medical literature, which increases its credibility.  
+3. **Interpretação Clínica**  
+   - Tumores malignos tendem a apresentar **bordas mais irregulares e formas menos uniformes**, refletidas nos pontos côncavos.  
+   - Tumores maiores e mais agressivos costumam apresentar valores mais altos de **área** e **raio**.  
+   - Portanto, o modelo reforça achados já conhecidos na literatura médica, aumentando sua credibilidade.  
 
-[🔝 Return to index](#-index)
+#### [🔝 Voltar ao índice](#-índice)
 ---
 
-### 6. Applicability Insights
+### 7. Insights de Aplicabilidade
 
-1. **Clinical Decision Support**  
-   - The model can be used as a **decision-support tool** for physicians, assisting in initial screening and prioritization of more detailed exams.  
+1. **Suporte à Decisão Clínica**  
+   - O modelo pode ser utilizado como uma **ferramenta de apoio à decisão** para médicos, auxiliando no rastreamento inicial e na priorização de exames mais detalhados.  
 
-2. **Model Explainability**  
-   - Random Forest allows for interpreting feature importance, which is crucial in medical applications (where the “why” behind a decision is almost as important as the decision itself).  
+2. **Interpretabilidade do Modelo**  
+   - O XGBoost permite interpretar a importância das variáveis, o que é crucial em aplicações médicas, onde o “porquê” da decisão é quase tão importante quanto a decisão em si.  
 
-3. **Integration Potential**  
-   - The model could be integrated into **hospital systems** for automatic analysis of exam data, helping reduce diagnosis time and increasing early detection rates.  
+3. **Potencial de Integração**  
+   - O modelo poderia ser integrado em **sistemas hospitalares** para análise automática de dados de exames, ajudando a reduzir o tempo de diagnóstico e aumentando as taxas de detecção precoce.  
 
-[🔝 Return to index](#-index)
+#### [🔝 Voltar ao índice](#-índice)
 ---
-
-### 7. Summary
-The model not only delivered **excellent technical performance**, but also highlighted **tumor characteristics already known in oncology** (irregularity and size), which increases its reliability and shows real potential for practical application.
-
