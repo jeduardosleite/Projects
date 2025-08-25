@@ -14,7 +14,7 @@ Justificativa para não aplicar transformação logarítmica nos outlie
   - [Principais colunas](#principais-colunas)
 - [6. Insights do Modelo](#6-insights-do-modelo)
 - [7. Insights de Aplicabilidade](#7-insights-de-aplicabilidade)
-
+- [8. Random Forest x XGBoost](#8-comparativo-de-modelos)
 
 ### 1. Objetivo
 
@@ -170,3 +170,17 @@ As medidas foram calculadas de três formas:
 #### [🔝 Voltar ao índice](#índice)
 ---
 
+### 8. Comparativo de Modelos
+
+Na primeira versão do projeto utilizei apenas o **Random Forest** para classificação. Posteriormente, revisitei o projeto e apliquei também o **XGBoost**, a fim de comparar o desempenho entre os dois algoritmos.  
+
+#### Resultados das Métricas
+
+| Modelo         | Acurácia | Precisão | Recall | F1-Score |
+|----------------|----------|----------|--------|----------|
+| Random Forest  | 96%      | 95%      | 94%    | 94%      |
+| XGBoost        | 97%      | 96%      | 95%    | 96%      |
+
+> Essa comparação evidenciou a importância de testar diferentes algoritmos, ajustar hiperparâmetros e analisar métricas além da acurácia, considerando também os **trade-offs entre sensibilidade e especificidade**.
+
+#### [🔝 Voltar ao índice](#índice)
