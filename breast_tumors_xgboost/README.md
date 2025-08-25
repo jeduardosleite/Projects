@@ -21,13 +21,13 @@ Justificativa para não aplicar transformação logarítmica nos outlie
 Desenvolver um modelo de *machine learning* capaz de classificar tumores de mama como malignos ou benignos com alta acurácia, utilizando o algoritmo **XGBoost**.  
 A ideia é mostrar como um modelo de *ensemble* pode ser aplicado a problemas de saúde, auxiliando na detecção precoce do câncer de mama.
 
-#### [🔝 Voltar ao índice](#-índice)
+#### [🔝 Voltar ao índice](#índice)
 ---
 
 ### 2. Contexto
 O câncer de mama é uma das principais causas de morte entre mulheres em todo o mundo. A detecção precoce é essencial para aumentar as chances de tratamento eficaz. Este projeto utiliza o **Breast Cancer Wisconsin Dataset**, amplamente usado na comunidade científica para testar modelos de classificação.
 
-#### [🔝 Voltar ao índice](#-índice)
+#### [🔝 Voltar ao índice](#índice)
 ---
 
 ### 3. Etapas do Projeto
@@ -39,7 +39,7 @@ O câncer de mama é uma das principais causas de morte entre mulheres em todo o
 - Interpretação dos resultados — identificação das variáveis mais importantes.  
 - Conclusões — análise do impacto das variáveis e aplicabilidade do modelo.  
 
-#### [🔝 Voltar ao índice](#-índice)
+#### [🔝 Voltar ao índice](#índice)
 ---
 
 ### 4. Justificativa para não aplicar transformação logarítmica nos outliers
@@ -75,7 +75,7 @@ Esses resultados demonstram que os outliers não prejudicaram o desempenho; pelo
 - Em diagnósticos médicos, o **recall é crítico**: um falso negativo pode ter consequências graves.  
 - A suavização dos outliers poderia **reduzir a sensibilidade do modelo** em relação a casos extremos de câncer, diminuindo sua capacidade de detecção.  
 
-#### [🔝 Voltar ao índice](#-índice)
+#### [🔝 Voltar ao índice](#índice)
 ---
 
 ### 5. Resultados
@@ -128,7 +128,7 @@ As medidas foram calculadas de três formas:
 - **0 → Maligno**  
 - **1 → Benigno**  
 
-#### [🔝 Voltar ao índice](#-índice)
+#### [🔝 Voltar ao índice](#índice)
 ---
 
 ### 6. Insights do Modelo
@@ -153,7 +153,7 @@ As medidas foram calculadas de três formas:
    - Tumores maiores e mais agressivos costumam apresentar valores mais altos de **área** e **raio**.  
    - Portanto, o modelo reforça achados já conhecidos na literatura médica, aumentando sua credibilidade.  
 
-#### [🔝 Voltar ao índice](#-índice)
+#### [🔝 Voltar ao índice](#índice)
 ---
 
 ### 7. Insights de Aplicabilidade
@@ -167,6 +167,6 @@ As medidas foram calculadas de três formas:
 3. **Potencial de Integração**  
    - O modelo poderia ser integrado em **sistemas hospitalares** para análise automática de dados de exames, ajudando a reduzir o tempo de diagnóstico e aumentando as taxas de detecção precoce.  
 
-#### [🔝 Voltar ao índice](#-índice)
+#### [🔝 Voltar ao índice](#índice)
 ---
 
