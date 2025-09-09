@@ -33,7 +33,9 @@
 <h1 align="center">Intenção de Compra Online</h1>
 <h3 align="center">Projeto de Clusterização</h3>
 
+<p align="center">
 <img width="827" height="673" alt="image" src="https://github.com/user-attachments/assets/128daf4b-4dc1-4fa9-921c-ca55c729be4c" />
+</p>
 
 ---
 
