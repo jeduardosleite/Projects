@@ -88,7 +88,7 @@ from sklearn.metrics import silhouette_score
 from tqdm.notebook import tqdm
 from sklearn.metrics import silhouette_samples
 ```
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 ## 3. Objetivo Final
@@ -99,7 +99,7 @@ Responder a questão:
 
 Demonstrarei, de forma analítica e visual, como a **ciência de dados aplicada à segmentação de clientes** pode gerar insights estratégicos para otimização de conversão, aumento de receita e eficiência em ações de marketing.
 
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 ## 4. Dataset
@@ -132,7 +132,7 @@ A base trata de registros de 12.330 sessões de acesso a páginas, cada sessão 
 
 <img width="375" height="305" alt="image" src="https://github.com/user-attachments/assets/e6dbdb92-b7be-45f3-8583-2edacc9e1be4" />
 
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 ## 5. Como defini o número de cluster?
@@ -161,7 +161,7 @@ Para encontrar a quantidade ideal de clusters, utilizei métricas de avaliação
 
 Neste projeto, combinei o **método estatístico (Silhouette)** com a **relevância prática para o negócio**, garantindo que os clusters encontrados sejam ao mesmo tempo **tecnicamente válidos e úteis para tomada de decisão**.
 
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 ## 6. Avaliação dos Grupos  
@@ -189,7 +189,7 @@ Apesar de a média apresentar resultados semelhantes quando utilizamos 3 cluster
 - Incluir um quarto cluster não agrega novos insights relevantes, apenas aumenta a complexidade da análise sem ganho prático.
 - A simplicidade na segmentação facilita tanto a interpretação dos resultados quanto a aplicação de estratégias de marketing direcionadas.
 
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 ## 7. Avaliação de Resultados
@@ -220,7 +220,6 @@ Usuários que passam tempo em páginas de produto, examinam detalhes e convertem
 - Incentivos de fidelização (cupom pós-compra, e-mails de recompra).  
 - Priorizar A/B tests de checkout para aumentar AOV (valor médio do pedido).  
 
-[🔝 Voltar ao topo](#-índice)
 ---
 
 ## Cluster 0 — “Pesquisadores antes de comprar”
@@ -252,7 +251,7 @@ Tráfego de baixa qualidade ou visitantes pouco engajados — muitas sessões r�
 - Captura de e-mails/lead magnets para nutrir (em vez de tentar converter na primeira visita).  
 - Retargeting com oferta de entrada (frete grátis, desconto inicial) para mover alguns para grupo pesquisador.  
 
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 ## 8. Escolhendo o cluster
@@ -269,7 +268,7 @@ Isso confirma que o **Cluster 1** (Compradores ativos) tem maior taxa de convers
 | **Pesquisam antes de comprar** | **Média (≈25%)**      | **R\$ 8,78**     | **R\$ 16.546**               | **Potencial estratégico: clientes que só precisam de estímulo certo para converter** |
 | Não engajados              | Baixa (≈13%)      | R\$ 5,35         | R\$ 54.887                   | Alto volume, mas pouco retorno consistente  |
 
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 ## 9. Por que focar em "Pesquisam antes de comprar?"
@@ -290,7 +289,7 @@ Isso confirma que o **Cluster 1** (Compradores ativos) tem maior taxa de convers
 - Diferente dos "Não Engajados", onde o esforço dificilmente se paga, esse cluster concentra clientes que respondem melhor a estímulos de marketing.  
 - Isso torna os investimentos mais eficazes e com maior retorno.  
 
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 ## 10. Conclusão final
@@ -314,7 +313,7 @@ Isso aumenta a chance de eles migrarem para o cluster Compradores Ativos, que é
 |                       | - Garantias claras (devolução grátis, suporte ativo, parcelamento facilitado)          |
 |                       | - Prova social: avaliações, depoimentos e “últimas unidades” para gerar urgência       |
 
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 
