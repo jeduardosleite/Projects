@@ -5,9 +5,9 @@
 3. [Objetivo Final](#3-objetivo-final)  
 4. [Dataset](#4-dataset)  
 5. [Como defini o número de cluster?](#5-como-defini-o-número-de-cluster)  
-   - [Método do Cotovelo (Elbow Method)](#método-do-cotovelo-elbow-method)  
-   - [Coeficiente de Silhueta (Silhouette Score)](#coeficiente-de-silhueta-silhouette-score)  
-   - [Análise de Negócio](#análise-de-negócio)  
+   - [Método do Cotovelo (Elbow Method)](#método-do-cotovelo-elbow-method)
+   - [Coeficiente de Silhueta (Silhouette Score)](#coeficiente-de-silhueta-silhouette-score)
+   - [Análise de Negócio](#análise-de-negócio)
 6. [Avaliação dos Grupos](#6-avaliação-dos-grupos)  
    - [2 Clusters](#2-clusters)  
    - [3 Clusters](#3-clusters)  
@@ -133,36 +133,31 @@ A base trata de registros de 12.330 sessões de acesso a páginas, cada sessão 
 
 \* variávels calculadas pelo google analytics
 
+<p align="center">
 <img width="375" height="305" alt="image" src="https://github.com/user-attachments/assets/e6dbdb92-b7be-45f3-8583-2edacc9e1be4" />
+</p>
 
 [🔝 Voltar ao topo](#índice)
 ---
 
 ## 5. Como defini o número de cluster?
 
-Para encontrar a quantidade ideal de clusters, utilizei métricas de avaliação que ajudam a medir a qualidade da segmentação:  
+### Método do Cotovelo (Elbow Method)
+- Calcula o *inertia* (soma das distâncias dos pontos ao centróide do cluster).
+- O ponto onde a redução começa a ser menos significativa (o "cotovelo")...
 
-1. **Método do Cotovelo (Elbow Method)**  
-   - Calcula o *inertia* (soma das distâncias dos pontos ao centróide do cluster).
-   - O ponto onde a redução começa a ser menos significativa (o "cotovelo" da curva) sugere o número ideal de clusters.  
-
+<p align="center">
 <img width="494" height="386" alt="image" src="https://github.com/user-attachments/assets/8d6f1a57-c0b8-406a-bf94-6cf8102d1ef7" />
+</p>
 
-2. **Coeficiente de Silhueta (Silhouette Score)**  
-   - Mede o quão semelhantes os pontos estão dentro de um cluster em comparação com outros clusters.  
-   - Varia de -1 a 1:  
-     - Valores próximos de **1** → clusters bem separados.  
-     - Valores próximos de **0** → sobreposição entre clusters.  
-     - Valores negativos → pontos classificados no cluster errado.  
-   - O número de clusters com maior *Silhouette Score* costuma ser o mais adequado.  
-
+### Coeficiente de Silhueta (Silhouette Score)
+- Mede o quão semelhantes os pontos estão dentro de um cluster...
+<p align="center">
 <img width="385" height="269" alt="image" src="https://github.com/user-attachments/assets/19044174-901b-4df2-833a-735cc7cf3b7d" />
+</p>
 
-3. **Análise de Negócio**  
-   - Mesmo que estatisticamente seja sugerido um número X de clusters, é fundamental verificar se eles fazem sentido no contexto do negócio.  
-   - Por exemplo: 2 clusters podem simplificar demais a análise, enquanto 3 ou 4 podem revelar segmentos mais estratégicos e acionáveis.  
-
-Neste projeto, combinei o **método estatístico (Silhouette)** com a **relevância prática para o negócio**, garantindo que os clusters encontrados sejam ao mesmo tempo **tecnicamente válidos e úteis para tomada de decisão**.
+### Análise de Negócio
+- Mesmo que estatisticamente seja sugerido um número X de clusters...
 
 [🔝 Voltar ao topo](#índice)
 ---
@@ -206,7 +201,9 @@ Esse processo permitiu gerar **insights estratégicos** para apoiar decisões ge
 
 ### Definindo os grupos
 
+<p align="center">
 <img width="488" height="147" alt="image" src="https://github.com/user-attachments/assets/63cbf896-a24a-4468-b1e0-3be7c651480f" />
+</p>
 
 Nesta etapa, apresentarei a segmentação dos clientes com o objetivo de demonstrar como as métricas foram interpretadas, quais caminhos analíticos conduziram às informações obtidas, a definição dos perfis identificados e, por fim, recomendações práticas para retenção dos clientes mais relevantes e captação dos clientes menos engajados.
 
@@ -259,11 +256,15 @@ Tráfego de baixa qualidade ou visitantes pouco engajados — muitas sessões r�
 
 ## 8. Escolhendo o cluster
 
+<p align="center">
 <img width="693" height="112" alt="image" src="https://github.com/user-attachments/assets/7142b6d2-ffda-4f41-8e73-63a7a470bae3" />
+</p>
 
 Isso confirma que o **Cluster 1** (Compradores ativos) tem maior taxa de conversão, mas o **Cluster 0** (Pesquisam antes de comprar) é o mais estratégico por ter mais usuários próximos da compra.
 
+<p align="center">
 <img width="604" height="623" alt="image" src="https://github.com/user-attachments/assets/f8948bc2-f304-4f05-b273-6fc529049324" />
+</p>
 
 | Cluster                    | Taxa de Conversão | PageValue Médio | Receita Estimada (PageValue) | Interpretação Executiva |
 |-----------------------------|------------------:|----------------:|-----------------------------:|--------------------------|
