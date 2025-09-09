@@ -5,11 +5,25 @@
 3. [Objetivo Final](#3-objetivo-final)  
 4. [Dataset](#4-dataset)  
 5. [Como defini o número de cluster?](#5-como-defini-o-número-de-cluster)  
+   - [Método do Cotovelo (Elbow Method)](#método-do-cotovelo-elbow-method)  
+   - [Coeficiente de Silhueta (Silhouette Score)](#coeficiente-de-silhueta-silhouette-score)  
+   - [Análise de Negócio](#análise-de-negócio)  
 6. [Avaliação dos Grupos](#6-avaliação-dos-grupos)  
+   - [2 Clusters](#2-clusters)  
+   - [3 Clusters](#3-clusters)  
+   - [4 Clusters](#4-cluster)  
 7. [Avaliação de Resultados](#7-avaliação-de-resultados)  
+   - [Cluster 1 — Compradores Ativos](#cluster-1--compradores-ativos)  
+   - [Cluster 0 — Pesquisadores antes de comprar](#cluster-0--pesquisadores-antes-de-comprar)  
+   - [Cluster 2 — Não compradores](#cluster-2--não-compradores-ou-baixo-engajamento)  
 8. [Escolhendo o cluster](#8-escolhendo-o-cluster)  
 9. [Por que focar em "Pesquisam antes de comprar?"](#9-por-que-focar-em-pesquisam-antes-de-comprar)  
+   - [1. Alto potencial de receita](#1-alto-potencial-de-receita)  
+   - [2. Comportamento estratégico](#2-comportamento-estratégico)  
+   - [3. Margem de crescimento](#3-margem-de-crescimento)  
+   - [4. Eficiência de investimento](#4-eficiência-de-investimento)  
 10. [Conclusão Final](#10-conclusão-final)  
+   - [Estímulos de Marketing para "Pesquisam antes de comprar"](#estímulos-de-marketing-para-pesquisam-antes-de-comprar)
 
 #### Contate-me: https://www.linkedin.com/in/jos%C3%A9-eduardo-souza-leite/
 
@@ -51,7 +65,7 @@ A metodologia aplicada envolveu as seguintes etapas:
    - Priorização de investimentos em clientes com maior probabilidade de gerar receita.  
    - Estratégia de retenção focada em transformar clientes de alto potencial em compradores recorrentes.  
 
-[🔝 Voltar ao topo](#-índice)
+[🔝 Voltar ao topo](#índice)
 ---
 
 ## 2. Tecnologias Utilizadas
