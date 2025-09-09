@@ -25,6 +25,7 @@
 10. [Conclusão Final](#10-conclusão-final)  
    - [Estímulos de Marketing para "Pesquisam antes de comprar"](#estímulos-de-marketing-para-pesquisam-antes-de-comprar)
 
+
 #### Contate-me: https://www.linkedin.com/in/jos%C3%A9-eduardo-souza-leite/
 
 ---
