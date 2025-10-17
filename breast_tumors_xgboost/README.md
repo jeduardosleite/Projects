@@ -80,25 +80,58 @@ Esses resultados demonstram que os outliers não prejudicaram o desempenho; pelo
 
 ### 5. Resultados
 
+|               | Previsto 0 | Previsto 1 |
+|---------------|------------|------------|
+| **Real 0**    | 40         | 2          |
+| **Real 1**    | 3          | 69         |
+
+**Classe 0 (sem câncer):**
+
+- **Verdadeiros Negativos (VN)** = 40 → pacientes saudáveis corretamente classificados.  
+- **Falsos Positivos (FP)** = 2 → pacientes saudáveis classificados como com câncer (falsos alarmes).
+
+**Classe 1 (com câncer):**
+
+- **Verdadeiros Positivos (VP)** = 69 → pacientes com câncer corretamente identificados.  
+- **Falsos Negativos (FN)** = 3 → pacientes com câncer não identificados pelo modelo (erros críticos).
+
+**Análise:**
+
+- O modelo apresenta altíssima acurácia, com apenas 5 erros em 114 observações.  
+- O **recall** da classe positiva (câncer) é muito alto:  
+$$
+  Recall = \frac{VP}{VP + FN} = \frac{69}{69 + 3} \approx 0.96
+$$
+  → 96% dos casos de câncer são identificados, o que é excelente clinicamente.  
+- Poucos **falsos positivos** (2), então o modelo também mantém boa **precisão**.
+
+---
+
 <img width="373" height="305" alt="image" src="https://github.com/user-attachments/assets/ad202644-8c74-4b19-a9c0-f8ba130c76a2" />
 
-#### Classe 0 (Sem câncer)
-- **Precision = 0.93** → 93% dos pacientes classificados como “sem câncer” realmente não têm.  
-- **Recall = 0.95** → o modelo consegue identificar 95% dos casos benignos corretamente.  
+### Classe 0 (Maligno / com câncer)
+- **Precision = 0.93** → 93% dos pacientes classificados como “com câncer” realmente têm.  
+- **Recall = 0.95** → o modelo consegue identificar 95% dos casos corretamente.
+- **F1-score = 0.94** → equilíbrio muito bom entre precisão e sensibilidade.
 
-#### Classe 1 (Com câncer)
-- **Precision = 0.97** → quase nenhum falso positivo (ótimo do ponto de vista clínico).  
-- **Recall = 0.96** → o mais importante: o modelo detecta **96% dos casos de câncer**.  
+### Classe 1 (Benigno / sem câncer)
+- **Precision = 0.97** → 97% dos pacientes classificados como *sem câncer*, realmente estão saudáveis.  
+- **Recall = 0.96** → o mais importante: o modelo detecta **96% dos casos de sem câncer**.
+- - **F1-score = 0.97** → equilíbrio muito bom entre precisão e sensibilidade.
 
-#### Métricas gerais
+### Métricas gerais
 - **Acurácia = 0.96** → desempenho geral altíssimo.  
 - **ROC AUC = 0.994** → separação quase perfeita entre classes.  
+
+---
 
 #### Principais variáveis para previsão
 Características relacionadas ao formato e tamanho do tumor, como:  
 - **mean concave points**  
 - **worst concave points**  
 - **worst area**  
+
+---
 
 #### Significado das colunas
 O dataset possui 30 variáveis numéricas derivadas da análise digital de imagens de massas mamárias obtidas por biópsia.  
@@ -147,6 +180,37 @@ As medidas foram calculadas de três formas:
      - **Mean concavity**  
      - **Worst radius**  
    - Isso indica que **irregularidades no contorno do tumor** e **dimensões do tumor** são fatores críticos na detecção de malignidade.  
+
+---
+
+#### Gráfico SHAP
+
+<img width="623" height="753" alt="image" src="https://github.com/user-attachments/assets/c71c3efd-63b3-4265-892f-26e020f3e7e1" />
+
+| Elemento             | Significado                                       |
+| :------------------- | :------------------------------------------------ |
+| Posição no eixo X    | Impacto na previsão (“Maligno” ← → “Benigno”)     |
+| Cor                  | Valor da variável (azul = baixo, vermelho = alto) |
+| Ordem das linhas     | Importância global da variável                    |
+| Dispersão dos pontos | Variabilidade de impacto entre observações        |
+
+- ```Vermelho```: Valores altos
+- ```Azul```: Valores baixos
+
+- ```Valores positivos```: aumentam a probabilidade de *benigno*
+- ```Valores negativos```: aumental a probabilidade de *maligno*
+
+Analisando o gráfico, observamos o quanto cada variável impacta a decisão do modelo.
+
+Por exemplo, a variável ```worst area``` apresenta diversos pontos vermelhos posicionados à esquerda (*região negativa do eixo X*).
+Isso indica que valores altos dessa variável (representados pela *cor vermelha*) reduzem a probabilidade da **classe 1** (Benigno) e, consequentemente, aumentam a probabilidade da **classe 0** (Maligno).
+Em outras palavras, tumores com maior área tendem a ser classificados como malignos — o que está em conformidade com a interpretação clínica esperada.
+
+Essa interpretação é corroborada pelo gráfico de barras apresentado em seguida, que resume a importância média das variáveis no modelo.
+Nesse gráfico, observamos que variáveis como ```worst area```, ```worst perimeter``` e ```worst radius``` estão entre as que mais contribuem probabilisticamente para a **classe 0** (Maligno).
+
+<img width="638" height="736" alt="image" src="https://github.com/user-attachments/assets/9c12a764-9352-4a3d-8abf-f571b2152dc3" />
+
 
 3. **Interpretação Clínica**  
    - Tumores malignos tendem a apresentar **bordas mais irregulares e formas menos uniformes**, refletidas nos pontos côncavos.  
