@@ -1,3 +1,6 @@
+[Linkedin](https://www.linkedin.com/in/jeduardosleite)
+-
+
 <h1 align="center">Personal and Academic Projects</h1>
 
 This repository aims to organize and share projects developed throughout my technology learning journey, including:
