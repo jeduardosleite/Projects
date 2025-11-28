@@ -49,8 +49,58 @@ Este projeto é um **sistema de Retrieval-Augmented Generation (RAG)** que permi
 
 ---
 
-## LLM Local com Ollama
+## Aplicação Local com Ollama + Streamlit  
+Este projeto utiliza modelos LLM executados **localmente**, sem depender de APIs pagas.  
+O usuário só precisa ter o **Ollama instalado** e rodando em sua máquina.
 
-**Instalar o Ollama**  
+### **Instalar o Ollama**  
 - Baixe e instale a versão correta para o seu sistema:  
 [https://ollama.com/download](https://ollama.com/download)
+
+### 1) Instalação do ambiente, clone o projeto:
+```bash
+git clone https://github.com/seu-repo/projeto-ollama.git
+cd projeto-ollama
+```
+
+### 2) Crie o ambiente virtual e instale dependências:
+```bash
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+
+pip install -r requirements.txt
+```
+
+### 3) Executando o projeto:
+```bash
+streamlit run app.py
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
