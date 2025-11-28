@@ -1,5 +1,11 @@
 # 📄 Leitor de PDF/Texto com LLM Local (RAG + Ollama)
 
+<img width="1059" height="585" alt="image" src="https://github.com/user-attachments/assets/05b354e1-8102-43d4-8d9e-00b5118d231c" />
+
+[![Assista ao vídeo](https://img.youtube.com/vi/ID_DO_VIDEO/0.jpg)]([https://www.youtube.com/watch?v=ID_DO_VIDE](https://www.youtube.com/watch?v=gjHrPyESfVU))
+
+
+
 Este projeto é um **sistema de Retrieval-Augmented Generation (RAG)** que permite:
 
 - Extrair e processar texto de **PDFs** ou texto digitado pelo usuário.
@@ -32,10 +38,18 @@ Este projeto é um **sistema de Retrieval-Augmented Generation (RAG)** que permi
 
 ---
 
-## ⚡ Como Executar
+## Fluxo do Projeto
 
-1. Clone este repositório:
+- Usuário fornece texto via PDF ou digitação.
+- O texto é quebrado em chunks (tamanho ajustável).
+- TF-IDF + FAISS identifica os trechos mais relevantes.
+- Prompt é enviado ao LLM via Ollama.
+- Resultado é exibido no Streamlit de forma limpa e concisa.
 
-```bash
-git clone https://github.com/seu-usuario/llm-rag-pdf-ollama.git
-cd llm-rag-pdf-ollama
+---
+
+## LLM Local com Ollama
+
+**Instalar o Ollama**  
+- Baixe e instale a versão correta para o seu sistema:  
+[https://ollama.com/download](https://ollama.com/download)
