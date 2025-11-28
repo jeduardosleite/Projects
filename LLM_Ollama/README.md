@@ -1,10 +1,11 @@
-# 📄 Leitor de PDF/Texto com LLM Local (RAG + Ollama)
+# Leitor de PDF/Texto com LLM Local (RAG + Ollama)
 
 <img width="1059" height="585" alt="image" src="https://github.com/user-attachments/assets/05b354e1-8102-43d4-8d9e-00b5118d231c" />
 
-[![Assista ao vídeo](https://img.youtube.com/vi/ID_DO_VIDEO/0.jpg)]([https://www.youtube.com/watch?v=ID_DO_VIDE](https://www.youtube.com/watch?v=gjHrPyESfVU))
+---
 
-
+### Vídeo demonstrativo
+[![Assista ao vídeo](https://img.youtube.com/vi/gjHrPyESfVU/0.jpg)](https://www.youtube.com/watch?v=gjHrPyESfVU)
 
 Este projeto é um **sistema de Retrieval-Augmented Generation (RAG)** que permite:
 
