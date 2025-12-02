@@ -156,9 +156,6 @@ A base trata de registros de 12.330 sessões de acesso a páginas, cada sessão 
 <img width="385" height="269" alt="image" src="https://github.com/user-attachments/assets/19044174-901b-4df2-833a-735cc7cf3b7d" />
 </p>
 
-### Análise de Negócio
-- Mesmo que estatisticamente seja sugerido um número X de clusters...
-
 [🔝 Voltar ao topo](#índice)
 ---
 
@@ -182,7 +179,7 @@ Embora a análise estatística inicial apontasse para apenas 2 agrupamentos, a o
 - ```Não engajados```: navegação rápida, pouco interesse em produtos.
 
 ### 4 cluster
-Apesar de a média apresentar resultados semelhantes quando utilizamos 3 clusters, a escolha por esse número é mais adequada para este caso de negócio. Isso porque:
+Apesar de a média apresentar resultados semelhantes quando utilizamos 3 clusters, optei pelo 3 clusters por ser mais adequada para este caso de negócio. Isso porque:
 - Três grupos já conseguem responder de forma consistente à questão central: identificar quais clientes são mais propensos à compra.
 - Incluir um quarto cluster não agrega novos insights relevantes, apenas aumenta a complexidade da análise sem ganho prático.
 - A simplicidade na segmentação facilita tanto a interpretação dos resultados quanto a aplicação de estratégias de marketing direcionadas.
