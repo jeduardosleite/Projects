@@ -65,10 +65,10 @@ Construir um modelo supervisionado capaz de prever usuários churn com foco em a
 
 ## Ferramentas Utilizadas
 
-- Python (Jupyter Notebook)
-- Pandas, NumPy, Matplotlib, Seaborn
-- PyCaret (Classificação)
-- Scikit-learn
+- **Anaconda Navigator**: ambiente de gerenciamento e execução de projetos no Jupyter Notebook.
+- **Python**: utilização de pacotes como pandas, NumPy, matplotlib, seaborn e outros para análise e visualização de dados.
+- **PyCaret**: seleção, treinamento e avaliação de modelos de Machine Learning.
+- **Scikit-learn**: suporte para análises estatísticas e métodos complementares de modelagem.
 
 [⬆ Voltar ao topo](#índice)
 ---
