@@ -3,7 +3,7 @@
 <img width="1019" height="526" alt="image" src="https://github.com/user-attachments/assets/7f69f940-bf5d-4e35-bc89-9b9c0b61c985" />
 
 # Índice
-Justificativa para não aplicar transformação logarítmica nos outlie
+
 - [1. Objetivo](#1-objetivo)
 - [2. Contexto](#2-contexto)
 - [3. Etapas do Projeto](#3-etapas-do-projeto)
