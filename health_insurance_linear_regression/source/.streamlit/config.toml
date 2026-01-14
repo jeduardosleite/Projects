@@ -1,6 +1,6 @@
 [theme]
-primaryColor = "#2FA4A9"              # verde-azulado suave (botões e destaques)
-backgroundColor = "#F7FBFC"           # fundo muito claro, quase branco
-secondaryBackgroundColor = "#FFFFFF" # cards e sidebar
-textColor = "#1F3A44"                 # azul escuro elegante para texto
+primaryColor = "#2FA4A9"              # verde-azulado elegante (botões)
+backgroundColor = "#E6F4F1"           # verde claro mais presente no fundo
+secondaryBackgroundColor = "#FFFFFF" # cards e sidebar continuam brancos
+textColor = "#1F3A44"                 # texto escuro confortável
 font = "sans serif"
