@@ -4,7 +4,7 @@
 
 ---
 
-<img width="527" height="342" alt="image" src="https://github.com/user-attachments/assets/5a0247af-8042-44a5-8983-1bcfc05f548c" />
+![image](images/titulo.png)
 
 
 # Objetivo
@@ -124,3 +124,5 @@ Durante a validação no conjunto de teste, enfrentei dificuldades práticas, co
 Além da parte técnica, procurei conduzir o projeto com uma visão orientada ao negócio, questionando constantemente se os resultados faziam sentido no mundo real e se os efeitos estimados eram plausíveis do ponto de vista econômico e comportamental. Erros fizeram parte de todo o processo, desde a criação de variáveis dummy, tratamento de outliers, até problemas de interpretação de métricas e gráficos. Lidei com esses desafios de forma madura e estruturada, utilizando cada falha como uma oportunidade de aprendizado e refinamento do modelo.
 
 Por fim, consolidei a percepção de que *Ciência de Dados* só gera valor quando se transforma em **decisão**. Por isso, fui além do ajuste do modelo e da análise de métricas, aplicando os resultados em um contexto realista de pricing, avaliando o impacto financeiro e estratégico das variáveis no negócio.
+
+![image](images/capa.png)
