@@ -2,7 +2,7 @@
 [Linkedin](https://www.linkedin.com/in/jeduardosleite/)
 ---
 
-![image](imagem/weather.png)
+![image](Imagem/weather.png)
 
 # Descrição do Projeto
 
